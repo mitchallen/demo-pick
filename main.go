@@ -17,4 +17,14 @@ func main() {
 
 	list2 := []string{"beta", "alpha", "gamma"}
 	fmt.Println(pick.OneString(list2))
+
+	weights := []float32{0.50, 0.30, 0.20}
+	for i := 0; i < 5; i++ {
+		m := make(map[int]int)
+		for j := 0; j < 1000; j++ {
+			m[pick.WeightedIndex(weights)]++
+		}
+		fmt.Println(m)
+	}
+
 }
